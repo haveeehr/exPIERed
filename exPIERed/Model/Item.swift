@@ -9,5 +9,6 @@ import Foundation
 
 struct Item {
     var name: String
+    var notes: String
     var quantity: Int
 }
