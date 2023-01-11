@@ -11,6 +11,7 @@
 		3B37A726296EC2510040A9AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B37A725296EC2510040A9AE /* ContentView.swift */; };
 		3B37A728296EC2520040A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37A727296EC2520040A9AE /* Assets.xcassets */; };
 		3B37A72B296EC2520040A9AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37A72A296EC2520040A9AE /* Preview Assets.xcassets */; };
+		3B37A737296EC98C0040A9AE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B37A736296EC98C0040A9AE /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		3B37A725296EC2510040A9AE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B37A727296EC2520040A9AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B37A72A296EC2520040A9AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3B37A736296EC98C0040A9AE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		3B37A722296EC2510040A9AE /* exPIERed */ = {
 			isa = PBXGroup;
 			children = (
+				3B37A734296EC8DA0040A9AE /* Model */,
 				3B37A723296EC2510040A9AE /* exPIERedApp.swift */,
 				3B37A725296EC2510040A9AE /* ContentView.swift */,
 				3B37A727296EC2520040A9AE /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				3B37A72A296EC2520040A9AE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3B37A734296EC8DA0040A9AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B37A736296EC98C0040A9AE /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				3B37A726296EC2510040A9AE /* ContentView.swift in Sources */,
 				3B37A724296EC2510040A9AE /* exPIERedApp.swift in Sources */,
+				3B37A737296EC98C0040A9AE /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
