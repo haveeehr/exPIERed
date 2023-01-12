@@ -12,6 +12,7 @@
 		3B37A728296EC2520040A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37A727296EC2520040A9AE /* Assets.xcassets */; };
 		3B37A72B296EC2520040A9AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37A72A296EC2520040A9AE /* Preview Assets.xcassets */; };
 		3B37A737296EC98C0040A9AE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B37A736296EC98C0040A9AE /* Product.swift */; };
+		C61C288A296ED3F20002D1F0 /* AddModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61C2889296ED3F20002D1F0 /* AddModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		3B37A727296EC2520040A9AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B37A72A296EC2520040A9AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B37A736296EC98C0040A9AE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		C61C2889296ED3F20002D1F0 /* AddModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		3B37A722296EC2510040A9AE /* exPIERed */ = {
 			isa = PBXGroup;
 			children = (
+				C61C2888296ED3F20002D1F0 /* Add Item */,
 				3B37A734296EC8DA0040A9AE /* Model */,
 				3B37A723296EC2510040A9AE /* exPIERedApp.swift */,
 				3B37A725296EC2510040A9AE /* ContentView.swift */,
@@ -76,6 +79,14 @@
 				3B37A736296EC98C0040A9AE /* Product.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C61C2888296ED3F20002D1F0 /* Add Item */ = {
+			isa = PBXGroup;
+			children = (
+				C61C2889296ED3F20002D1F0 /* AddModal.swift */,
+			);
+			path = "Add Item";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C61C288A296ED3F20002D1F0 /* AddModal.swift in Sources */,
 				3B37A726296EC2510040A9AE /* ContentView.swift in Sources */,
 				3B37A724296EC2510040A9AE /* exPIERedApp.swift in Sources */,
 				3B37A737296EC98C0040A9AE /* Product.swift in Sources */,
@@ -287,6 +299,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +329,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
