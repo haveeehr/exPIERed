@@ -15,9 +15,9 @@ struct Product: Identifiable, Hashable {
     var category: Category
     
     static var products: [Product] = [
-        Product(name: "Chicken AIA", expiryDate: Date().addingTimeInterval(60*60*24*5), isOpened: false, category: .meat),
-        Product(name: "Tacchino", expiryDate: Date().addingTimeInterval(60*60*24*10), isOpened: true, category: .meat),
-        Product(name: "Banana", expiryDate: Date().addingTimeInterval(60*60*24), isOpened: false, category: .fruit),
+        Product(name: "Chicken AIA", expiryDate: Date(), isOpened: false, category: .meat),
+        Product(name: "Tacchino", expiryDate: Date(), isOpened: true, category: .meat),
+        Product(name: "Banana", expiryDate: Date(), isOpened: false, category: .fruit),
         Product(name: "Insalata", expiryDate: Date(), isOpened: true, category: .vegetables)
     ]
 }
