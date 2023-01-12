@@ -15,6 +15,9 @@
 		D887273F296EC94400C814FB /* CategoryFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887273E296EC94400C814FB /* CategoryFieldComponent.swift */; };
 		D8872741296ECB1B00C814FB /* CircleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8872740296ECB1B00C814FB /* CircleComponent.swift */; };
 		D8CE120E296EC5E30021423B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE120D296EC5E30021423B /* CategoryView.swift */; };
+
+		3B37A737296EC98C0040A9AE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B37A736296EC98C0040A9AE /* Product.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,8 @@
 		D887273E296EC94400C814FB /* CategoryFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFieldComponent.swift; sourceTree = "<group>"; };
 		D8872740296ECB1B00C814FB /* CircleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleComponent.swift; sourceTree = "<group>"; };
 		D8CE120D296EC5E30021423B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+
+		3B37A736296EC98C0040A9AE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +64,11 @@
 		3B37A722296EC2510040A9AE /* exPIERed */ = {
 			isa = PBXGroup;
 			children = (
+
 				D8872742296ED46F00C814FB /* Category */,
+
+				3B37A734296EC8DA0040A9AE /* Model */,
+
 				3B37A723296EC2510040A9AE /* exPIERedApp.swift */,
 				3B37A725296EC2510040A9AE /* ContentView.swift */,
 				3B37A727296EC2520040A9AE /* Assets.xcassets */,
@@ -76,6 +85,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+
 		D887273D296EC91D00C814FB /* Category components */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,14 @@
 				D887273D296EC91D00C814FB /* Category components */,
 			);
 			path = Category;
+
+		3B37A734296EC8DA0040A9AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3B37A736296EC98C0040A9AE /* Product.swift */,
+			);
+			path = Model;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,9 +186,13 @@
 				D887273F296EC94400C814FB /* CategoryFieldComponent.swift in Sources */,
 				3B37A726296EC2510040A9AE /* ContentView.swift in Sources */,
 				3B37A724296EC2510040A9AE /* exPIERedApp.swift in Sources */,
+
 				D8CE120E296EC5E30021423B /* CategoryView.swift in Sources */,
 				D8872741296ECB1B00C814FB /* CircleComponent.swift in Sources */,
 				D86C960029700EBB008581C7 /* CategoryExtensions.swift in Sources */,
+
+				3B37A737296EC98C0040A9AE /* Product.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
