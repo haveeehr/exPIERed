@@ -11,7 +11,7 @@ import SwiftUI
 struct exPIERedApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HighlightsPage()
         }
     }
 }
