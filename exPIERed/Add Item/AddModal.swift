@@ -70,14 +70,12 @@ struct AddModal: View {
         
         }
     
-//    func getItem() {
-////        let newItem = Product(name: nameTitle, expiryDate: today, isOpened: isOpened, category: selectedCategory)
-//
-//        let newItem = [Product]()
-//
-//        itemList.append(contentsOf: newItem)
-//        print("works")
-//    }
+    func getItem() {
+        let newItem = Product(name: nameTitle, expiryDate: today, isOpened: isOpened, category: selectedCategory)
+
+        Product.products.append(newItem)
+        print("works")
+    }
 
 }
 
