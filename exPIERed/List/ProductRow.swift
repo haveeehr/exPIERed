@@ -33,8 +33,8 @@ struct ProductRow: View {
     
     func formatDate(expirationDate: Date, format: String) -> String{
         let dayFormatter = DateFormatter()
-        let _ = dayFormatter.locale = Locale(identifier: "it_IT")
-        let _ = dayFormatter.dateFormat = format
+        dayFormatter.locale = Locale(identifier: "EN_Nz")
+        dayFormatter.dateFormat = format
         
         return dayFormatter.string(from: expirationDate).capitalized
     }
