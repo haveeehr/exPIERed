@@ -19,8 +19,6 @@ struct AddModal: View {
     @State var isOpened: Bool = false
     @State var selectedCategory: Category = .meat
     
-    //    @State var itemList = [Product]()
-    
     
     var body: some View {
         NavigationView {
