@@ -16,17 +16,18 @@ struct HighlightsPage: View {
             VStack(spacing: 5){
                 ProductList()
                 CategoryView(products: $products)
-                
             }
             .background(Color(UIColor.systemGray6))
             .toolbar{
-                Button(action: {showCreationModal.toggle()
-                }, label: {Image(systemName: "plus")})
+                Button {
+                    showCreationModal.toggle()
+                } label: {
+                    Image(systemName: "plus")
+                }
             }
             .sheet(isPresented: $showCreationModal, onDismiss: {
                 products = Product.products
-            }
-                   , content: {
+            }, content: {
                 AddModal()
             })
             
