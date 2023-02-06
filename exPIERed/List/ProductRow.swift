@@ -16,7 +16,7 @@ struct ProductRow: View {
             VStack(alignment: .leading, spacing: 2){
                 Text(name)
                     .font(.system(size: 17))
-                Text("\(formatDate(expirationDate: expirationDate, format: "DD MMMM YYYY"))")
+                Text("\(formatDate(expirationDate: expirationDate, format: "dd MMMM YYYY"))")
                     .font(.system(size: 12))
                     .foregroundColor(.gray)
                 

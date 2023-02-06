@@ -9,13 +9,12 @@ import SwiftUI
 
 struct HighlightsPage: View {
     @State var showCreationModal = false
-    @State var products: [Product] = Product.products
-    
+    @StateObject var viewModel = HighlightModelView()
     var body: some View {
         NavigationView{
             VStack(spacing: 5){
-                ProductList()
-                CategoryView(products: $products)
+                ProductList(showAddModal: $showCreationModal)
+                CategoryView(products: $viewModel.products)
             }
             .background(Color(UIColor.systemGray6))
             .toolbar{
@@ -26,11 +25,28 @@ struct HighlightsPage: View {
                 }
             }
             .sheet(isPresented: $showCreationModal, onDismiss: {
-                products = Product.products
+                
             }, content: {
                 AddModal()
             })
             
+        }.onChange(of: showCreationModal, perform: {_ in
+            do{
+               try viewModel.refetchData()
+            }catch{
+                //better handle the error
+                print(error)
+            }
+        })
+        .onAppear(){
+            do{
+                viewModel.products = try viewModel.getProducts()
+            }catch{
+                //better handle the error
+                print(error)
+            }
+            NotificationManager.instance.deleteNotification()
+            NotificationManager.instance.scheduleNotification(products: viewModel.products)
         }
         
     }

@@ -7,30 +7,38 @@
 import Foundation
 
 struct Product: Identifiable, Hashable {
-    let id = UUID()
+    var id = UUID()
     var name: String
     var dateCreated = Date()
     var expiryDate: Date
     var isOpened: Bool
     var category: Category
     
-    static var products: [Product] = [
-        Product(name: "Chicken AIA", expiryDate: Date().addingTimeInterval(60*60*24*2), isOpened: false, category: .meat),
-        Product(name: "Turkey", expiryDate: Date().addingTimeInterval(-60*60*24*5), isOpened: true, category: .meat),
-        Product(name: "Banana", expiryDate: Date().addingTimeInterval(60*60*24*4), isOpened: false, category: .fruit),
-        Product(name: "Salad", expiryDate: Date().addingTimeInterval(60*60*24*10), isOpened: true, category: .vegetables),
-        Product(name: "Tuna fillet", expiryDate: Date().addingTimeInterval(-60*60*24*20), isOpened: false, category: .fish),
-        Product(name: "Carrots", expiryDate: Date().addingTimeInterval(60*60*24*23), isOpened: true, category: .vegetables),
-        Product(name: "Pineapple", expiryDate: Date().addingTimeInterval(60*60*24*5), isOpened: false, category: .fruit),
-        Product(name: "Swordfish", expiryDate: Date().addingTimeInterval(-60*60*24*5), isOpened: true, category: .fish),
-        Product(name: "Chicken Nuggets", expiryDate: Date().addingTimeInterval(60*60*24*9), isOpened: false, category: .meat),
-        Product(name: "Tacchino", expiryDate: Date().addingTimeInterval(-60*60*24*10), isOpened: true, category: .meat),
-        Product(name: "Avocado", expiryDate: Date().addingTimeInterval(60*60*24*7), isOpened: false, category: .fruit),
-        Product(name: "Eggplant", expiryDate: Date().addingTimeInterval(60*60*24*11), isOpened: true, category: .vegetables),
-        Product(name: "Biscuits", expiryDate: Date().addingTimeInterval(60*60*24*11), isOpened: true, category: .others),
-        Product(name: "White bread", expiryDate: Date().addingTimeInterval(60*60*24*19), isOpened: true, category: .others)
-
-    ]
+    init(name: String, dateCreated: Date = Date(), expiryDate: Date, isOpened: Bool, category: Category) {
+        self.name = name
+        self.dateCreated = dateCreated
+        self.expiryDate = expiryDate
+        self.isOpened = isOpened
+        self.category = category
+    }
+    
+    init(food:FoodEntity) {
+        self.name = food.name ?? ""
+        self.dateCreated = food.dateCreated ?? Date()
+        self.expiryDate = food.expiryDate ?? Date()
+        self.isOpened = food.isOpened
+        self.category = Category.getCategory(category: food.category ?? "")
+        self.id = food.id ?? UUID()
+    }
+    
+    func copyInEntity(food:FoodEntity){
+        food.name = self.name
+        food.category = self.category.name
+        food.isOpened = self.isOpened
+        food.expiryDate = self.expiryDate
+        food.dateCreated = self.dateCreated
+        food.id = self.id
+    }
 }
 
 enum Category: CaseIterable {
@@ -53,6 +61,20 @@ enum Category: CaseIterable {
         case .others:
             return "Others"
         }
+    }
+    static func getCategory(category:String)->Category{
+        if category == "Meat"{
+            return .meat
+        }else if category == "Fish"{
+            return .fish
+        }else if category == "Vegetables"{
+            return .vegetables
+        }else if category == "Fruit"{
+            return.fruit
+        }else if category == "Others"{
+            return .others
+        }
+        return .others
     }
 }
 

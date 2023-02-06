@@ -17,6 +17,8 @@ struct AddModal: View {
     @State var nextDate = Calendar.current.date(byAdding: .day, value: 3, to: Date.now) ?? Date.now
     @State var isOpened: Bool = false
     @State var selectedCategory: Category = .meat
+    @StateObject var viewModel = AddModalModelView()
+    
     
     var body: some View {
         NavigationView {
@@ -64,8 +66,12 @@ struct AddModal: View {
     
     func getItem() {
         let newItem = Product(name: nameTitle, expiryDate: today, isOpened: isOpened, category: selectedCategory)
-        
-        Product.products.append(newItem)
+        do{
+            try viewModel.createNewFood(product: newItem)
+        }catch {
+            //better handle the error
+            print(error)
+        }
     }
     
 }

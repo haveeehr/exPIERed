@@ -19,6 +19,13 @@
 		3B10E66529715E5400084E88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B10E66229715E5400084E88 /* Preview Assets.xcassets */; };
 		3B10E66A29715EAC00084E88 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B10E66929715EAC00084E88 /* Product.swift */; };
 		3B37A728296EC2520040A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37A727296EC2520040A9AE /* Assets.xcassets */; };
+		D857E90D298ED1E6005D0335 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857E90C298ED1E6005D0335 /* NotificationsController.swift */; };
+		D8605F62297FD5410051E397 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8605F61297FD5410051E397 /* CoreDataManager.swift */; };
+		D8605F69297FD7B70051E397 /* FoodManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8605F67297FD7B70051E397 /* FoodManager.xcdatamodeld */; };
+		D865665A297944E1000140FE /* APIcaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8656659297944E1000140FE /* APIcaller.swift */; };
+		D86F9F66298BC200004C851E /* ProductListModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F9F65298BC200004C851E /* ProductListModelView.swift */; };
+		D88A406E298BB1BE00C0714F /* HighlightsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A406D298BB1BE00C0714F /* HighlightsModelView.swift */; };
+		D88A4070298BB73100C0714F /* AddModalModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88A406F298BB73100C0714F /* AddModalModelView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +42,13 @@
 		3B10E66929715EAC00084E88 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		3B37A720296EC2510040A9AE /* exPIERed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exPIERed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B37A727296EC2520040A9AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D857E90C298ED1E6005D0335 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		D8605F61297FD5410051E397 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D8605F68297FD7B70051E397 /* FoodManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodManager.xcdatamodel; sourceTree = "<group>"; };
+		D8656659297944E1000140FE /* APIcaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIcaller.swift; sourceTree = "<group>"; };
+		D86F9F65298BC200004C851E /* ProductListModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListModelView.swift; sourceTree = "<group>"; };
+		D88A406D298BB1BE00C0714F /* HighlightsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsModelView.swift; sourceTree = "<group>"; };
+		D88A406F298BB73100C0714F /* AddModalModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddModalModelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				3B10E64829715D3E00084E88 /* AddModal.swift */,
+				D88A406F298BB73100C0714F /* AddModalModelView.swift */,
 			);
 			path = "Add Product";
 			sourceTree = "<group>";
@@ -80,6 +95,7 @@
 			children = (
 				3B10E64F29715D3F00084E88 /* ProductRow.swift */,
 				3B10E65029715D3F00084E88 /* ProductList.swift */,
+				D86F9F65298BC200004C851E /* ProductListModelView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -87,9 +103,9 @@
 		3B10E65F29715E5400084E88 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				3B10E66029715E5400084E88 /* exPIERedApp.swift */,
 				3B10E66129715E5400084E88 /* HighlightsPage.swift */,
 				3B10E66229715E5400084E88 /* Preview Assets.xcassets */,
+				D88A406D298BB1BE00C0714F /* HighlightsModelView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -121,14 +137,35 @@
 		3B37A722296EC2510040A9AE /* exPIERed */ = {
 			isa = PBXGroup;
 			children = (
+				D857E90B298ED1D7005D0335 /* Notifications */,
+				3B10E66029715E5400084E88 /* exPIERedApp.swift */,
+				D8656658297944CE000140FE /* API caller */,
 				3B10E66629715E7600084E88 /* Model */,
 				3B10E65F29715E5400084E88 /* Preview Content */,
 				3B10E64629715D3E00084E88 /* Add Product */,
 				3B10E63D29715D3E00084E88 /* Category */,
 				3B10E64E29715D3F00084E88 /* List */,
 				3B37A727296EC2520040A9AE /* Assets.xcassets */,
+				D8605F61297FD5410051E397 /* CoreDataManager.swift */,
+				D8605F67297FD7B70051E397 /* FoodManager.xcdatamodeld */,
 			);
 			path = exPIERed;
+			sourceTree = "<group>";
+		};
+		D857E90B298ED1D7005D0335 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				D857E90C298ED1E6005D0335 /* NotificationsController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		D8656658297944CE000140FE /* API caller */ = {
+			isa = PBXGroup;
+			children = (
+				D8656659297944E1000140FE /* APIcaller.swift */,
+			);
+			path = "API caller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,15 +238,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8605F69297FD7B70051E397 /* FoodManager.xcdatamodeld in Sources */,
 				3B10E65829715D3F00084E88 /* AddModal.swift in Sources */,
+				D88A4070298BB73100C0714F /* AddModalModelView.swift in Sources */,
+				D857E90D298ED1E6005D0335 /* NotificationsController.swift in Sources */,
 				3B10E65429715D3F00084E88 /* CategoryFieldComponent.swift in Sources */,
 				3B10E65129715D3F00084E88 /* CategoryView.swift in Sources */,
 				3B10E66A29715EAC00084E88 /* Product.swift in Sources */,
+				D88A406E298BB1BE00C0714F /* HighlightsModelView.swift in Sources */,
 				3B10E66329715E5400084E88 /* exPIERedApp.swift in Sources */,
 				3B10E65D29715D3F00084E88 /* ProductRow.swift in Sources */,
+				D8605F62297FD5410051E397 /* CoreDataManager.swift in Sources */,
 				3B10E65E29715D3F00084E88 /* ProductList.swift in Sources */,
 				3B10E65329715D3F00084E88 /* CircleComponent.swift in Sources */,
+				D865665A297944E1000140FE /* APIcaller.swift in Sources */,
 				3B10E65229715D3F00084E88 /* CategoryExtensions.swift in Sources */,
+				D86F9F66298BC200004C851E /* ProductListModelView.swift in Sources */,
 				3B10E66429715E5400084E88 /* HighlightsPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +391,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,7 +421,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -413,6 +457,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8605F67297FD7B70051E397 /* FoodManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8605F68297FD7B70051E397 /* FoodManager.xcdatamodel */,
+			);
+			currentVersion = D8605F68297FD7B70051E397 /* FoodManager.xcdatamodel */;
+			path = FoodManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3B37A718296EC2510040A9AE /* Project object */;
 }

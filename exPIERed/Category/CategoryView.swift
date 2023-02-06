@@ -13,7 +13,7 @@ struct CategoryView: View {
     @Binding var products: [Product]
     
     var body: some View {
-        NavigationLink(isActive: $moveToListView, destination:{ ProductList(isExpirationList: false, foodCategory: chosenFoodCategory)}, label: {})
+        NavigationLink(isActive: $moveToListView, destination:{ ProductList(isExpirationList: false, foodCategory: chosenFoodCategory, showAddModal: .constant(false))}, label: {})
         VStack(alignment: .leading, spacing: 15){
             
             //The category section

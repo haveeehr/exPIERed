@@ -10,16 +10,22 @@ import SwiftUI
 struct ProductList: View {
     var isExpirationList: Bool = true
     var foodCategory: [Category]?
-    @State private var searchText = ""
-    
+    @Binding var showAddModal:Bool
+    @StateObject var modelViewModel:ProductListModelView = ProductListModelView()
     var searchResults: [Product] {
-        if searchText.isEmpty {
-            return filterList(products: Product.products, category: foodCategory, isExpirationList: isExpirationList)
-        } else {
-            return Product.products.filter{$0.name.contains(searchText)}
+        do{
+            let productsArray = try modelViewModel.getProducts()
+            if modelViewModel.searchText.isEmpty {
+                return modelViewModel.filterList(products: productsArray, category: foodCategory, isExpirationList: isExpirationList)
+            } else {
+                return productsArray.filter{$0.name.contains(modelViewModel.searchText)}
+            }
+        }catch{
+            //better handle the error
+            print(error)
+           return []
         }
     }
-    
     
     var body: some View {
         
@@ -58,61 +64,21 @@ struct ProductList: View {
         .navigationTitle(isExpirationList ? "" : foodCategory!.count > 1 ? "All" : foodCategory?[0].name ?? "")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color(UIColor.systemGray6))
-        .searchable(text: $searchText)
+        .searchable(text: $modelViewModel.searchText)
+
+        
         
     }
-    
     func delete(at offsets: IndexSet) {
-        Product.products.remove(atOffsets: offsets)
-    }
-    
-    func filterList(products: [Product], category: [Category]?, isExpirationList: Bool) -> [Product]{
-        
-        if isExpirationList || category == nil{
-            return filterByExpirationDate(products: products)
-        }else{
-            return filterByCategory(products: products, selectedCategory: category!)
+        offsets.sorted(by: > ).forEach { (i) in
+            try! modelViewModel.deleteFood(product: searchResults[i])
         }
-        
     }
-    
-    
-    func generateFutureDate() -> Date{
-        let currentDate = Date()
-        var dateComponent = DateComponents()
-        dateComponent.day = 7
-        
-        return Calendar.current.date(byAdding: dateComponent, to: currentDate) ?? Date()
-    }
-    
-    
-    func filterByExpirationDate(products: [Product]) -> [Product]{
-        let futureDate: Date = generateFutureDate()
-        let filteredList = products.filter{$0.expiryDate <= futureDate && $0.expiryDate > Date()}
-        
-        return sortByExpiryDate(products: filteredList)
-    }
-    
-    func filterByCategory(products: [Product], selectedCategory: [Category]) -> [Product]{
-        let filteredList: [Product]
-        if selectedCategory.count == 1{
-            filteredList = products.filter{$0.category == selectedCategory[0]}
-        } else{
-            filteredList = products
-        }
-        
-        return sortByExpiryDate(products: filteredList)
-    }
-    
-    
-    func sortByExpiryDate(products: [Product]) -> [Product]{
-        return products.sorted{$0.expiryDate < $1.expiryDate}
-        
-    }
+   
 }
 
-struct ProductList_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductList()
-    }
-}
+//struct ProductList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProductList()
+//    }
+//}
