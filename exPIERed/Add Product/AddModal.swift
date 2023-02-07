@@ -5,37 +5,36 @@
 //  Created by Ramona Ruoppo on 11/01/23.
 //
 
-import SwiftUI
 import Foundation
+import SwiftUI
 
+// MARK: - AddModal
 
 struct AddModal: View {
     @Environment(\.dismiss) var dismiss
-    
+
     @State var nameTitle = ""
     @State var today = Date.now
     @State var nextDate = Calendar.current.date(byAdding: .day, value: 3, to: Date.now) ?? Date.now
     @State var isOpened: Bool = false
-    @State var selectedCategory: Category = .meat
+    @State var selectedCategory: Category
     @StateObject var viewModel = AddModalModelView()
-    
-    
+
     var body: some View {
         NavigationView {
             Form {
                 Section {
                     TextField("Name", text: $nameTitle)
-                    
+
                     Picker("Category", selection: $selectedCategory) {
-                        
-                        ForEach(Category.allCases, id:\.self){ category in
+                        ForEach(Category.allCases, id: \.self) { category in
                             Text(category.name).tag(category.name)
                         }
                     }
                     .pickerStyle(.menu)
-                    
+
                     Toggle("Opened", isOn: $isOpened)
-                    DatePicker("Expiry Date", selection: isOpened ?  $nextDate : $today, displayedComponents: .date)
+                    DatePicker("Expiry Date", selection: isOpened ? $nextDate : $today, in: Date()..., displayedComponents: .date)
                         .datePickerStyle(.compact)
                         .disabled(isOpened)
                 }
@@ -61,23 +60,25 @@ struct AddModal: View {
                 }
             }
         }
-        
     }
-    
+
     func getItem() {
-        let newItem = Product(name: nameTitle, expiryDate: today, isOpened: isOpened, category: selectedCategory)
-        do{
+        let expiryDate = isOpened ? nextDate : today
+        let newItem = Product(name: nameTitle, expiryDate: expiryDate, isOpened: isOpened, category: selectedCategory)
+        do {
             try viewModel.createNewFood(product: newItem)
-        }catch {
-            //better handle the error
+        }
+        catch {
+            // better handle the error
             print(error)
         }
     }
-    
 }
+
+// MARK: - AddModal_Previews
 
 struct AddModal_Previews: PreviewProvider {
     static var previews: some View {
-        AddModal()
+        AddModal(selectedCategory: .greens)
     }
 }

@@ -7,17 +7,23 @@
 
 import SwiftUI
 
-///The icon component
+// MARK: - CircleComponent
+
+/// The icon component
 struct CircleComponent: View {
-    ///The name of the SFSymbol
-    var imageName:String
+    /// The name of the SFSymbol
+    var imageName: String
+
     var body: some View {
-        ZStack{
-            Circle().frame(width: 30,height: 30).foregroundColor(.blue)
-            Image(systemName: imageName).foregroundColor(.white).font(.system(size: 14))
+        ZStack {
+            Circle().frame(width: 35, height: 35).foregroundColor(.accentColor)
+            Image(systemName: imageName).foregroundColor(.white)
+            
         }
     }
 }
+
+// MARK: - CircleComponent_Previews
 
 struct CircleComponent_Previews: PreviewProvider {
     static var previews: some View {

@@ -11,11 +11,12 @@ import SwiftUI
 struct exPIERedApp: App {
     var body: some Scene {
         WindowGroup {
-            HighlightsPage().onAppear(){
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (success, error) in
-                    if success{
+            HighlightsPage().onAppear {
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
+                    if success {
                         print("All set")
-                    } else if let error = error {
+                    }
+                    else if let error = error {
                         print(error.localizedDescription)
                     }
                 }

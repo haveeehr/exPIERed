@@ -6,13 +6,10 @@
 //
 
 import Foundation
-extension AddModal{
-    class AddModalModelView:ObservableObject{
-        
-        func createNewFood(product:Product) throws{
+extension AddModal {
+    class AddModalModelView: ObservableObject {
+        func createNewFood(product: Product) throws {
             try CoreDataManager.shared.createNewFood(product: product)
         }
-        
-        
     }
 }

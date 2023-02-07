@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-extension Text{
-    func categoryTitleText() -> Text{
-        self.font(.system(size:22,weight:.bold, design: .rounded)).foregroundColor(.black)
+extension Text {
+    func categoryTitleText() -> Text {
+        font(.system(size: 22, weight: .bold, design: .rounded)).foregroundColor(.primary)
     }
-    
-    func categoryNameText() -> Text{
-        self.font(.system(size:18,weight:.semibold, design: .rounded)).foregroundColor(.gray)
+
+    func categoryNameText() -> Text {
+        font(.system(size: 18, weight: .semibold, design: .rounded)).foregroundColor(.secondary)
     }
-    
-    func categoryNumberText() -> Text{
-        self.font(.system(size:28,weight:.bold, design: .rounded)).foregroundColor(.black)
+
+    func categoryNumberText() -> Text {
+        font(.system(size: 28, weight: .bold, design: .rounded)).foregroundColor(.primary)
     }
 }

@@ -7,87 +7,83 @@
 
 import Foundation
 
-extension ProductList{
-    class ProductListModelView: ObservableObject{
-        
-        @Published var searchText = ""
-        @Published var productsArray = []
-   
-        
-        init(){
+extension ProductList {
+    class ProductListModelView: ObservableObject {
+        // MARK: Lifecycle
+
+        init() {
             productsArray = try! getProducts()
         }
-        
-        func getAllFood() throws -> [FoodEntity]{
-            let foodArray:[FoodEntity] = try CoreDataManager.shared.fetch(entityName: "FoodEntity")
+
+        // MARK: Internal
+
+        @Published var searchText = ""
+        @Published var productsArray = []
+
+        func getAllFood() throws -> [FoodEntity] {
+            let foodArray: [FoodEntity] = try CoreDataManager.shared.fetch(entityName: "FoodEntity")
             return foodArray
         }
-        
-        func getProducts() throws -> [Product]{
-            var productArray:[Product] = []
+
+        func getProducts() throws -> [Product] {
+            var productArray: [Product] = []
             let foodArray = try getAllFood()
-            for food in foodArray{
+            for food in foodArray {
                 productArray.append(Product(food: food))
             }
             return productArray
         }
-        
-        func deleteFood(product:Product)throws{
+
+        func deleteFood(product: Product) throws {
             let foodArray = try getAllFood()
-            try CoreDataManager.shared.delete(data: foodArray.first(where: {$0.id == product.id})!)
+            try CoreDataManager.shared.delete(data: foodArray.first(where: { $0.id == product.id })!)
         }
-        
-        
-        
+
         func delete(at offsets: IndexSet) {
-            offsets.sorted(by: > ).forEach { (i) in
+            offsets.sorted(by: >).forEach { i in
                 try! deleteFood(product: try getProducts()[i])
             }
             productsArray = try! getProducts()
         }
-        
-        func filterList(products: [Product], category: [Category]?, isExpirationList: Bool) -> [Product]{
-            
-            if isExpirationList || category == nil{
+
+        func filterList(products: [Product], category: [Category]?, isExpirationList: Bool) -> [Product] {
+            if isExpirationList || category == nil {
                 return filterByExpirationDate(products: products)
-            }else{
+            }
+            else {
                 return filterByCategory(products: products, selectedCategory: category!)
             }
-            
         }
-        
-        
-        func generateFutureDate() -> Date{
+
+        func generateFutureDate() -> Date {
             let currentDate = Date()
             var dateComponent = DateComponents()
             dateComponent.day = 7
-            
+
             return Calendar.current.date(byAdding: dateComponent, to: currentDate) ?? Date()
         }
-        
-        
-        func filterByExpirationDate(products: [Product]) -> [Product]{
+
+        func filterByExpirationDate(products: [Product]) -> [Product] {
             let futureDate: Date = generateFutureDate()
-            let filteredList = products.filter{$0.expiryDate <= futureDate && $0.expiryDate > Date()}
-            
+            let filteredList = products.filter { $0.expiryDate <= futureDate && $0.expiryDate > Date() }
+
             return sortByExpiryDate(products: filteredList)
         }
-        
-        func filterByCategory(products: [Product], selectedCategory: [Category]) -> [Product]{
+
+        func filterByCategory(products: [Product], selectedCategory: [Category]) -> [Product] {
             let filteredList: [Product]
-            if selectedCategory.count == 1{
-                filteredList = products.filter{$0.category == selectedCategory[0]}
-            } else{
+            if selectedCategory.count == 1 {
+                filteredList = products.filter { $0.category == selectedCategory[0] }
+            }
+            else {
                 filteredList = products
             }
-            
+
             return sortByExpiryDate(products: filteredList)
         }
-        
-        
-        func sortByExpiryDate(products: [Product]) -> [Product]{
-            return products.sorted{$0.expiryDate < $1.expiryDate}
-            
+
+        func sortByExpiryDate(products: [Product]) -> [Product] {
+            return products.sorted { $0.expiryDate < $1.expiryDate }
         }
     }
 }

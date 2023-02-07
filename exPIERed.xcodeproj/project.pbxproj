@@ -18,6 +18,10 @@
 		3B10E66429715E5400084E88 /* HighlightsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B10E66129715E5400084E88 /* HighlightsPage.swift */; };
 		3B10E66529715E5400084E88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B10E66229715E5400084E88 /* Preview Assets.xcassets */; };
 		3B10E66A29715EAC00084E88 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B10E66929715EAC00084E88 /* Product.swift */; };
+		3B1A1DD12991056400069696 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1A1DD02991056400069696 /* EmptyView.swift */; };
+		3B1A1DD42991135300069696 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1A1DD32991135300069696 /* HeaderView.swift */; };
+		3B1A1DD82991448500069696 /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1A1DD72991448500069696 /* CategoryListView.swift */; };
+		3B1A1DDB2992394F00069696 /* CategoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1A1DDA2992394F00069696 /* CategoryRow.swift */; };
 		3B37A728296EC2520040A9AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B37A727296EC2520040A9AE /* Assets.xcassets */; };
 		D857E90D298ED1E6005D0335 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857E90C298ED1E6005D0335 /* NotificationsController.swift */; };
 		D8605F62297FD5410051E397 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8605F61297FD5410051E397 /* CoreDataManager.swift */; };
@@ -40,6 +44,10 @@
 		3B10E66129715E5400084E88 /* HighlightsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightsPage.swift; sourceTree = "<group>"; };
 		3B10E66229715E5400084E88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B10E66929715EAC00084E88 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		3B1A1DD02991056400069696 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		3B1A1DD32991135300069696 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		3B1A1DD72991448500069696 /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		3B1A1DDA2992394F00069696 /* CategoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRow.swift; sourceTree = "<group>"; };
 		3B37A720296EC2510040A9AE /* exPIERed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exPIERed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B37A727296EC2520040A9AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D857E90C298ED1E6005D0335 /* NotificationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
@@ -65,6 +73,7 @@
 		3B10E63D29715D3E00084E88 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				3B1A1DD92992393E00069696 /* Category Row  */,
 				3B10E63E29715D3E00084E88 /* CategoryView.swift */,
 				3B10E63F29715D3E00084E88 /* Category components */,
 			);
@@ -118,6 +127,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3B1A1DD22991134400069696 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				3B1A1DD02991056400069696 /* EmptyView.swift */,
+				3B1A1DD32991135300069696 /* HeaderView.swift */,
+			);
+			path = "Custom View";
+			sourceTree = "<group>";
+		};
+		3B1A1DD92992393E00069696 /* Category Row  */ = {
+			isa = PBXGroup;
+			children = (
+				3B1A1DD72991448500069696 /* CategoryListView.swift */,
+				3B1A1DDA2992394F00069696 /* CategoryRow.swift */,
+			);
+			path = "Category Row ";
+			sourceTree = "<group>";
+		};
 		3B37A717296EC2510040A9AE = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +164,7 @@
 		3B37A722296EC2510040A9AE /* exPIERed */ = {
 			isa = PBXGroup;
 			children = (
+				3B1A1DD22991134400069696 /* Custom View */,
 				D857E90B298ED1D7005D0335 /* Notifications */,
 				3B10E66029715E5400084E88 /* exPIERedApp.swift */,
 				D8656658297944CE000140FE /* API caller */,
@@ -238,16 +266,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1A1DDB2992394F00069696 /* CategoryRow.swift in Sources */,
 				D8605F69297FD7B70051E397 /* FoodManager.xcdatamodeld in Sources */,
 				3B10E65829715D3F00084E88 /* AddModal.swift in Sources */,
 				D88A4070298BB73100C0714F /* AddModalModelView.swift in Sources */,
 				D857E90D298ED1E6005D0335 /* NotificationsController.swift in Sources */,
 				3B10E65429715D3F00084E88 /* CategoryFieldComponent.swift in Sources */,
 				3B10E65129715D3F00084E88 /* CategoryView.swift in Sources */,
+				3B1A1DD42991135300069696 /* HeaderView.swift in Sources */,
 				3B10E66A29715EAC00084E88 /* Product.swift in Sources */,
 				D88A406E298BB1BE00C0714F /* HighlightsModelView.swift in Sources */,
 				3B10E66329715E5400084E88 /* exPIERedApp.swift in Sources */,
 				3B10E65D29715D3F00084E88 /* ProductRow.swift in Sources */,
+				3B1A1DD82991448500069696 /* CategoryListView.swift in Sources */,
+				3B1A1DD12991056400069696 /* EmptyView.swift in Sources */,
 				D8605F62297FD5410051E397 /* CoreDataManager.swift in Sources */,
 				3B10E65E29715D3F00084E88 /* ProductList.swift in Sources */,
 				3B10E65329715D3F00084E88 /* CircleComponent.swift in Sources */,
