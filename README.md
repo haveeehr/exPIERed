@@ -7,6 +7,6 @@ With **Savory**, you can also create a grocery list and check it off as you shop
 
 Start saving money and reducing waste with Savory, the app that helps you get the most out of your groceries. Download now and start your journey towards a more conscious and mindful lifestyle.
 
-![IMG_3447](https://user-images.githubusercontent.com/53168317/217771311-53745aa2-0122-4358-962d-c0292cc0f1cc.PNG)
+![IMG_3447](https://user-images.githubusercontent.com/53168317/217771311-53745aa2-0122-4358-962d-c0292cc0f1cc.PNG | width = "250") 
 
-![IMG_3450](https://user-images.githubusercontent.com/53168317/217771341-9514cf67-748e-4e0b-9a3b-97f37d38b2e0.PNG)
+![IMG_3450](https://user-images.githubusercontent.com/53168317/217771341-9514cf67-748e-4e0b-9a3b-97f37d38b2e0.PNG  | width = "250") 
